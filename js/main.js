@@ -3,7 +3,7 @@
 	if ('serviceWorker' in navigator) {
 		window.addEventListener('load', () => {
 			navigator.serviceWorker.register('sw.js').then(registration => {
-				console.log('Service worker successfully registered on scope', registration.scope);
+				console.log('Service worker successfully registered', registration.scope);
 			}).catch(error => {
 				console.log('Service worker failed to register');
 			});
@@ -17,7 +17,8 @@
 		}
 	});	
 
-fetch("https://free.currencyconverterapi.com/api/v5/currencies")
+const url = 'https://free.currencyconverterapi.com/api/v5/currencies';
+fetch(url)
 	.then(res => res.json())
 	.then(data => {
 		
@@ -39,14 +40,11 @@ fetch("https://free.currencyconverterapi.com/api/v5/currencies")
 	
 	
 
-	const convertCurrency = () => 
-	{ 
-	
-			
-			const convertfrom = document.getElementById("convertfrom").value;
-			const convertto = document.getElementById("convertto").value;
-			const query = `${convertfrom}_${convertto}`;
-			const url = `https://free.currencyconverterapi.com/api/v5/convert?q=${query}&compact=ultra`;
+	const convertCurrency = () => { 
+		const convertfrom = document.getElementById("convertfrom").value;
+		const convertto = document.getElementById("convertto").value;
+		const query = `${convertfrom}_${convertto}`;
+		const url = `https://free.currencyconverterapi.com/api/v5/convert?q=${query}&compact=ultra`;
 
 			fetch(url)
 				.then(response => {
