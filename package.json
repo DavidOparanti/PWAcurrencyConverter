@@ -1,7 +1,7 @@
 {
   "name": "currencyConverter",
   "version": "1.0.0",
-  "description": "A Web Application that works both online and offline",
+  "description": "A PWA currency converter",
   "main": "\u001b[D\u001b[D\u001b[D\u001bhtml)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
