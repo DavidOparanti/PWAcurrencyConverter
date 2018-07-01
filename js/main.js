@@ -3,7 +3,7 @@
 	if ('serviceWorker' in navigator) {
 		window.addEventListener('load', () => {
 			navigator.serviceWorker.register('sw.js').then(registration => {
-				//console.log('Service worker successfully registered on scope', registration.scope);
+				//console.log('Service worker successfully registered', registration.scope);
 			}).catch(error => {
 				//console.log('Service worker failed to register');
 			});
@@ -27,18 +27,17 @@
 		for (const key in data) {
 		  return data[key];
 		}
-		//console.log(data);
+	
 	})
 	.then(datakey => {
 		for (const key2 in datakey) {
 			const id = datakey[key2].id;
 			const curName = datakey[key2].currencyName;
-			//console.log(id, curName);
 			$('#convertfrom, #convertto').append($('<option>').text(`${curName}  ${id}`).attr('value', id));
 		}
 	})
 	.catch(error => {
-		//console.log(error);
+		
 	})
 	
 	
@@ -80,9 +79,7 @@
 						
 			});
 			
-			// if (amt.value === '') {
-				// alert('Please enter amount to convert');
-			// }
+			
 		
 	}
 	
